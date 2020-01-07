@@ -9,7 +9,7 @@ const html = [
 
   ' alt=',
 
-  '/>\n<p class="description">\n',
+  '/>\n<p>\n',
 
   '\n</p>\n</div>'
 ];
