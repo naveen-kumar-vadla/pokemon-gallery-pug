@@ -20,9 +20,9 @@ const getHtml = () => {
       html[0] +
       pokemon.name +
       html[1] +
-      pokemon.art_url +
+      `"${pokemon.art_url}"` +
       html[2] +
-      `${pokemon.name}Image` +
+      `"${pokemon.name}Image"` +
       html[3] +
       pokemon.description +
       html[4];
