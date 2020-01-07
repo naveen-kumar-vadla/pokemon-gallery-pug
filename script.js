@@ -1,7 +1,7 @@
 'use strict';
 
 const { appendFileSync } = require('fs');
-const pokemonData = require('./pokemon');
+const pokemonData = require('./pokemonData');
 const html = [
   '<div class="pokemon">\n<h3 class="pokemonName">',
 
