@@ -1,45 +1,46 @@
 'use strict';
 
-const { appendFileSync } = require('fs');
+const { writeFileSync } = require('fs');
 const pokemonData = require('./pokemonData');
 const html = [
-  '<div class="pokemon">\n<h3 class="pokemonName">',
-
-  '</h3>\n<img src=',
-
+  '<div class="pokemon">\n<div class="pokemonName">\n<p>',
+  //name
+  '</p><p>',
+  //id
+  '</div>\n<img src=',
+  //img url
   'alt=',
-
-  '/>\n<h3 class="stats">STATISTICS</h3>\n<div class="type">\n',
-
+  //name
+  '/>\n<div class="type">\n',
+  //types
   '\n</div>\n</div>'
 ];
 
-const getId = id => {
-  if (id < 10) return `#00${id}`;
-  if (id < 100) return `#0${id}`;
-  return `#${id}`;
+const getTypeCode = (string, type) => {
+  string += `<p>${type}</p>`;
+  return string;
 };
 
-const getHtml = (pokemonData, filePath) => {
-  pokemonData.forEach(pokemon => {
-    const types = pokemon.type.reduce((string, info) => {
-      string += `<p>${info}</p>`;
-      return string;
-    }, '');
-    const code =
-      html[0] +
-      getId(pokemon.id) +
-      ' ' +
-      pokemon.name +
-      html[1] +
-      `"${pokemon.art_url}"` +
-      html[2] +
-      `"${pokemon.name}Image"` +
-      html[3] +
-      types +
-      html[4];
-    appendFileSync(filePath, code, 'utf8');
-  });
+const generatePokemonHtmlCode = (htmlCode, pokemon) => {
+  const types = pokemon.type.reduce(getTypeCode, '');
+  htmlCode +=
+    html[0] +
+    pokemon.name +
+    html[1] +
+    `#${pokemon.num}` +
+    html[2] +
+    `"${pokemon.art_url}"` +
+    html[3] +
+    `"${pokemon.name}Image"` +
+    html[4] +
+    types +
+    html[5];
+  return htmlCode;
 };
 
-getHtml(pokemonData, './generatedHtml.html');
+const getHtml = () => {
+  const htmlCode = pokemonData.reduce(generatePokemonHtmlCode, '');
+  writeFileSync('./generatedHtml.html', htmlCode, 'utf8');
+};
+
+getHtml();
