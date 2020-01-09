@@ -3,10 +3,10 @@
 
   <head>
     <title>pokemon Gallery</title>
-    <link rel="icon" type="image/png" href="./icon.png">
+    <link rel="icon" type="image/png" href="https://assets.pokemon.com/static2/_ui/img/favicon.ico">
     <style>
       body {
-        background-color: aliceblue;
+        background-color: #acfcfc;
         font-family: sans-serif;
         font-weight: 100;
         line-height: 20px;
@@ -22,6 +22,7 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly;
+
       }
 
       .pokemon {
@@ -33,6 +34,8 @@
         margin: 20px 0px 20px 0px;
         background-color: white;
         box-shadow: 5px 5px 10px 5px #ccc;
+        transform: scale(0.9);
+        transition: transform 1s;
       }
 
       .pokemon img {
@@ -43,7 +46,7 @@
 
       .pokemon:hover {
         background-color: #f6f6fb;
-        box-shadow: 5px 5px 10px 5px #ccc;
+        transform: scale(1);
       }
 
       .pokemonName {
