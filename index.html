@@ -14,9 +14,14 @@
         border-bottom: 1px solid black;
         text-align: center;
         color: rgba(0, 0, 0, 0.7);
-        font-size: 50px;
+        font-size: 60px;
         font-weight: 400;
-        margin: 10px;
+        margin-bottom: 9px;
+        padding-top: 10px;
+      }
+
+      input:focus {
+        outline: none;
       }
 
       .pokemonContainer {
@@ -28,13 +33,29 @@
 
       }
 
+      .searchBar {
+        display: flex;
+        justify-content: center;
+        padding-top: 15px;
+      }
+
+      input[type="text"] {
+        height: 35px;
+        width: 400px;
+        border: none;
+        background-color: transparent;
+        border-bottom: 1px solid rgba(80, 80, 80, 0.5);
+        border-radius: 3px;
+        padding-left: 10px;
+      }
+
       .pokemon {
         display: flex;
         flex-direction: column;
         width: 180px;
-        border-radius: 10px;
-        padding: 15px 20px 24px 20px;
-        margin: 20px 0px 20px 0px;
+        border-radius: 6px;
+        padding: 15px 20px 20px 20px;
+        margin: 20px;
         background-color: white;
         box-shadow: 5px 5px 10px 0px #ccc;
         transform: scale(0.95);
@@ -45,7 +66,6 @@
         height: 150px;
         margin-left: auto;
         margin-right: auto;
-        padding-top: 10px;
       }
 
       .pokemon:hover {
@@ -175,10 +195,32 @@
         background: linear-gradient(#ff6600, #dad1d1);
       }
     </style>
+    <script>
+      const filterPokemons = (pokemon, text) => {
+        const pokemonName = pokemon.children[0].innerText.toLowerCase();
+        return pokemonName.includes(text);
+      };
+      const searchPoke = function () {
+        const text = document.getElementById("searchBox").value.toLowerCase();
+        const allPokemons = Array.from(
+          document.getElementsByClassName("pokemon")
+        );
+        allPokemons.forEach(pokemon => (pokemon.style["display"] = "none"));
+        const filteredPokemons = allPokemons.filter(pokemon =>
+          filterPokemons(pokemon, text)
+        );
+        filteredPokemons.forEach(
+          pokemon => (pokemon.style["display"] = "flex")
+        );
+      };
+    </script>
   </head>
 
   <body>
     <h1 class="main-heading">Pokemon Gallery</h1>
+    <div class="searchBar">
+      <input type="text" id="searchBox" placeholder="Search your pokemon here" oninput="searchPoke()" />
+    </div>
     <div class="pokemonContainer">
       <div class="pokemon">
         <div class="pokeCard-heading">
