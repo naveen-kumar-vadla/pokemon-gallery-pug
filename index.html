@@ -6,15 +6,17 @@
     <link rel="icon" type="image/png" href="https://assets.pokemon.com/static2/_ui/img/favicon.ico">
     <style>
       body {
-        background: linear-gradient(to right, #92f0ff, #a1e7ff, #a6ffff);
+        background-color: #00d9ff26;
         font-family: sans-serif;
-        font-weight: 100;
-        line-height: 20px;
       }
 
       .main-heading {
-        text-align: center;
         border-bottom: 1px solid black;
+        text-align: center;
+        color: rgba(0, 0, 0, 0.7);
+        font-size: 50px;
+        font-weight: 400;
+        margin: 10px;
       }
 
       .pokemonContainer {
@@ -30,51 +32,151 @@
         flex-direction: column;
         width: 200px;
         border-radius: 10px;
-        padding: 20px;
+        padding: 15px 20px 24px 20px;
         margin: 20px 0px 20px 0px;
         background-color: white;
         box-shadow: 5px 5px 10px 0px #ccc;
         transform: scale(0.95);
-        transition: transform 1s;
+        transition: transform 0.7s;
       }
 
       .pokemon img {
         height: 150px;
         margin-left: auto;
         margin-right: auto;
-        padding: 10px;
+        padding-top: 10px;
       }
 
       .pokemon:hover {
-        background-color: #f6f6fb;
         transform: scale(1);
         cursor: pointer;
       }
 
       .pokemonName {
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid rgba(80, 80, 80, 0.3);
         display: flex;
         justify-content: space-between;
       }
 
       .pokemonName p {
-        margin-top: 0px;
-        font-weight: bold;
+        padding: 0px;
+        margin: 0px 0px 10px 0px;
+        color: rgba(30, 30, 30, 0.8);
+        font-weight: 500;
+      }
+
+      .pokemonInfo {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        padding-top: 10px;
+      }
+
+      .types {
+        display: flex;
+        justify-content: center;
       }
 
       .type {
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
+        margin: 0px;
+        font-size: 12px;
+        color: rgba(20, 20, 20, 0.8);
+        padding: 5px;
+        border: 1px solid rgba(80, 80, 80, 0.3);
+        border-radius: 5px;
+        margin-right: 5px;
+        margin-left: 5px;
+      }
+
+      .Grass,
+      .Poison,
+      .Bug,
+      .Flying,
+      .Dragon,
+      .Electric,
+      .Fighting,
+      .Fire,
+      .Ghost,
+      .Poison,
+      .Psychic,
+      .Ground,
+      .Rock,
+      .Ice,
+      .Flying,
+      .Normal,
+      .Water {
+        width: 12px;
+        height: 12px;
+        margin-top: 1px;
+        border-radius: 50%;
+        margin-right: 5px;
+      }
+
+      .Grass {
+        background: linear-gradient(#9bcc50, #83ad44);
+      }
+
+      .Poison {
+        background: linear-gradient(#b97fc9, #a370b1);
+      }
+
+      .Bug {
+        background: linear-gradient(brown, black);
+      }
+
+      .Flying {
+        background: linear-gradient(#fbff00, #eee1e1);
+      }
+
+      .Dragon {
+        background: linear-gradient(#fdff75, #fccc7c);
+      }
+
+      .Electric {
+        background: linear-gradient(#fbff00, #ffc400);
+      }
+
+      .Fighting {
+        background: linear-gradient(#929252, #cccc5c);
+      }
+
+      .Fire {
+        background: linear-gradient(#ff6600, #fbff00);
+      }
+
+      .Ghost {
+        background: linear-gradient(#444141, #4e4242);
+      }
+
+      .Psychic {
+        background: linear-gradient(#4e4b4b, #8b8989);
+      }
+
+      .Ground {
+        background: linear-gradient(#584632, #5c4937);
+      }
+
+      .Rock {
+        background: linear-gradient(#5d5c5c, #8f8f8f);
+      }
+
+      .Ice {
+        background: linear-gradient(#00ffff, #ffffff);
+      }
+
+      .Water {
+        background: linear-gradient(#00ffff, #008cff);
+      }
+
+      .Normal {
+        background: linear-gradient(#ff6600, #dad1d1);
       }
     </style>
   </head>
 
   <body>
-    <div class="main-heading">
-      <h1>Pokemon Gallery</h1>
-    </div>
+    <h1 class="main-heading">Pokemon Gallery</h1>
     <div class="pokemonContainer">
       <div class="pokemon">
         <div class="pokemonName">
@@ -82,9 +184,15 @@
           <p>#001
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/001.png" alt="BulbasaurImage" />
-        <div class="type">
-          <p>Grass</p>
-          <p>Poison</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Grass"></div>Grass
+            </div>
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -93,9 +201,15 @@
           <p>#002
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/002.png" alt="IvysaurImage" />
-        <div class="type">
-          <p>Grass</p>
-          <p>Poison</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Grass"></div>Grass
+            </div>
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -104,9 +218,15 @@
           <p>#003
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/003.png" alt="VenusaurImage" />
-        <div class="type">
-          <p>Grass</p>
-          <p>Poison</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Grass"></div>Grass
+            </div>
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -115,8 +235,12 @@
           <p>#004
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/004.png" alt="CharmanderImage" />
-        <div class="type">
-          <p>Fire</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Fire"></div>Fire
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -125,8 +249,12 @@
           <p>#005
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/005.png" alt="CharmeleonImage" />
-        <div class="type">
-          <p>Fire</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Fire"></div>Fire
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -135,9 +263,15 @@
           <p>#006
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/006.png" alt="CharizardImage" />
-        <div class="type">
-          <p>Fire</p>
-          <p>Flying</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Fire"></div>Fire
+            </div>
+            <div class="type">
+              <div class="Flying"></div>Flying
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -146,8 +280,12 @@
           <p>#007
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/007.png" alt="SquirtleImage" />
-        <div class="type">
-          <p>Water</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Water"></div>Water
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -156,8 +294,12 @@
           <p>#008
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/008.png" alt="WartortleImage" />
-        <div class="type">
-          <p>Water</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Water"></div>Water
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -166,8 +308,12 @@
           <p>#009
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/009.png" alt="BlastoiseImage" />
-        <div class="type">
-          <p>Water</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Water"></div>Water
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -176,8 +322,12 @@
           <p>#010
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/010.png" alt="CaterpieImage" />
-        <div class="type">
-          <p>Bug</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Bug"></div>Bug
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -186,8 +336,12 @@
           <p>#011
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/011.png" alt="MetapodImage" />
-        <div class="type">
-          <p>Bug</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Bug"></div>Bug
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -196,9 +350,15 @@
           <p>#012
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/012.png" alt="ButterfreeImage" />
-        <div class="type">
-          <p>Bug</p>
-          <p>Flying</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Bug"></div>Bug
+            </div>
+            <div class="type">
+              <div class="Flying"></div>Flying
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -207,9 +367,15 @@
           <p>#013
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/013.png" alt="WeedleImage" />
-        <div class="type">
-          <p>Bug</p>
-          <p>Poison</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Bug"></div>Bug
+            </div>
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -218,9 +384,15 @@
           <p>#014
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/014.png" alt="KakunaImage" />
-        <div class="type">
-          <p>Bug</p>
-          <p>Poison</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Bug"></div>Bug
+            </div>
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -229,9 +401,15 @@
           <p>#015
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/015.png" alt="BeedrillImage" />
-        <div class="type">
-          <p>Bug</p>
-          <p>Poison</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Bug"></div>Bug
+            </div>
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -240,9 +418,15 @@
           <p>#016
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/016.png" alt="PidgeyImage" />
-        <div class="type">
-          <p>Normal</p>
-          <p>Flying</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Normal"></div>Normal
+            </div>
+            <div class="type">
+              <div class="Flying"></div>Flying
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -251,9 +435,15 @@
           <p>#017
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/017.png" alt="PidgeottoImage" />
-        <div class="type">
-          <p>Normal</p>
-          <p>Flying</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Normal"></div>Normal
+            </div>
+            <div class="type">
+              <div class="Flying"></div>Flying
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -262,9 +452,15 @@
           <p>#018
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/018.png" alt="PidgeotImage" />
-        <div class="type">
-          <p>Normal</p>
-          <p>Flying</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Normal"></div>Normal
+            </div>
+            <div class="type">
+              <div class="Flying"></div>Flying
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -273,8 +469,12 @@
           <p>#019
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/019.png" alt="RattataImage" />
-        <div class="type">
-          <p>Normal</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Normal"></div>Normal
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -283,8 +483,12 @@
           <p>#020
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/020.png" alt="RaticateImage" />
-        <div class="type">
-          <p>Normal</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Normal"></div>Normal
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -293,9 +497,15 @@
           <p>#021
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/021.png" alt="SpearowImage" />
-        <div class="type">
-          <p>Normal</p>
-          <p>Flying</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Normal"></div>Normal
+            </div>
+            <div class="type">
+              <div class="Flying"></div>Flying
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -304,9 +514,15 @@
           <p>#022
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/022.png" alt="FearowImage" />
-        <div class="type">
-          <p>Normal</p>
-          <p>Flying</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Normal"></div>Normal
+            </div>
+            <div class="type">
+              <div class="Flying"></div>Flying
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -315,8 +531,12 @@
           <p>#023
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/023.png" alt="EkansImage" />
-        <div class="type">
-          <p>Poison</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -325,8 +545,12 @@
           <p>#024
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/024.png" alt="ArbokImage" />
-        <div class="type">
-          <p>Poison</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -335,8 +559,12 @@
           <p>#025
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/025.png" alt="PikachuImage" />
-        <div class="type">
-          <p>Electric</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Electric"></div>Electric
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -345,8 +573,12 @@
           <p>#026
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/026.png" alt="RaichuImage" />
-        <div class="type">
-          <p>Electric</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Electric"></div>Electric
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -355,8 +587,12 @@
           <p>#027
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/027.png" alt="SandshrewImage" />
-        <div class="type">
-          <p>Ground</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Ground"></div>Ground
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -365,8 +601,12 @@
           <p>#028
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/028.png" alt="SandslashImage" />
-        <div class="type">
-          <p>Ground</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Ground"></div>Ground
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -375,8 +615,12 @@
           <p>#029
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/029.png" alt="Nidoran ♀ (Female)Image" />
-        <div class="type">
-          <p>Poison</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -385,8 +629,12 @@
           <p>#030
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/030.png" alt="NidorinaImage" />
-        <div class="type">
-          <p>Poison</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -395,9 +643,15 @@
           <p>#031
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/031.png" alt="NidoqueenImage" />
-        <div class="type">
-          <p>Poison</p>
-          <p>Ground</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+            <div class="type">
+              <div class="Ground"></div>Ground
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -406,8 +660,12 @@
           <p>#032
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/032.png" alt="Nidoran ♂ (Male)Image" />
-        <div class="type">
-          <p>Poison</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -416,8 +674,12 @@
           <p>#033
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/033.png" alt="NidorinoImage" />
-        <div class="type">
-          <p>Poison</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -426,9 +688,15 @@
           <p>#034
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/034.png" alt="NidokingImage" />
-        <div class="type">
-          <p>Poison</p>
-          <p>Ground</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+            <div class="type">
+              <div class="Ground"></div>Ground
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -437,8 +705,12 @@
           <p>#035
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/035.png" alt="ClefairyImage" />
-        <div class="type">
-          <p>Normal</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Normal"></div>Normal
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -447,8 +719,12 @@
           <p>#036
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/036.png" alt="ClefableImage" />
-        <div class="type">
-          <p>Normal</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Normal"></div>Normal
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -457,8 +733,12 @@
           <p>#037
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/037.png" alt="VulpixImage" />
-        <div class="type">
-          <p>Fire</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Fire"></div>Fire
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -467,8 +747,12 @@
           <p>#038
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/038.png" alt="NinetalesImage" />
-        <div class="type">
-          <p>Fire</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Fire"></div>Fire
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -477,8 +761,12 @@
           <p>#039
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/039.png" alt="JigglypuffImage" />
-        <div class="type">
-          <p>Normal</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Normal"></div>Normal
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -487,8 +775,12 @@
           <p>#040
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/040.png" alt="WigglytuffImage" />
-        <div class="type">
-          <p>Normal</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Normal"></div>Normal
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -497,9 +789,15 @@
           <p>#041
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/041.png" alt="ZubatImage" />
-        <div class="type">
-          <p>Poison</p>
-          <p>Flying</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+            <div class="type">
+              <div class="Flying"></div>Flying
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -508,9 +806,15 @@
           <p>#042
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/042.png" alt="GolbatImage" />
-        <div class="type">
-          <p>Poison</p>
-          <p>Flying</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+            <div class="type">
+              <div class="Flying"></div>Flying
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -519,9 +823,15 @@
           <p>#043
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/043.png" alt="OddishImage" />
-        <div class="type">
-          <p>Grass</p>
-          <p>Poison</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Grass"></div>Grass
+            </div>
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -530,9 +840,15 @@
           <p>#044
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/044.png" alt="GloomImage" />
-        <div class="type">
-          <p>Grass</p>
-          <p>Poison</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Grass"></div>Grass
+            </div>
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -541,9 +857,15 @@
           <p>#045
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/045.png" alt="VileplumeImage" />
-        <div class="type">
-          <p>Grass</p>
-          <p>Poison</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Grass"></div>Grass
+            </div>
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -552,9 +874,15 @@
           <p>#046
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/046.png" alt="ParasImage" />
-        <div class="type">
-          <p>Bug</p>
-          <p>Grass</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Bug"></div>Bug
+            </div>
+            <div class="type">
+              <div class="Grass"></div>Grass
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -563,9 +891,15 @@
           <p>#047
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/047.png" alt="ParasectImage" />
-        <div class="type">
-          <p>Bug</p>
-          <p>Grass</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Bug"></div>Bug
+            </div>
+            <div class="type">
+              <div class="Grass"></div>Grass
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -574,9 +908,15 @@
           <p>#048
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/048.png" alt="VenonatImage" />
-        <div class="type">
-          <p>Bug</p>
-          <p>Poison</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Bug"></div>Bug
+            </div>
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -585,9 +925,15 @@
           <p>#049
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/049.png" alt="VenomothImage" />
-        <div class="type">
-          <p>Bug</p>
-          <p>Poison</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Bug"></div>Bug
+            </div>
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -596,8 +942,12 @@
           <p>#050
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/050.png" alt="DiglettImage" />
-        <div class="type">
-          <p>Ground</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Ground"></div>Ground
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -606,8 +956,12 @@
           <p>#051
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/051.png" alt="DugtrioImage" />
-        <div class="type">
-          <p>Ground</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Ground"></div>Ground
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -616,8 +970,12 @@
           <p>#052
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/052.png" alt="MeowthImage" />
-        <div class="type">
-          <p>Normal</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Normal"></div>Normal
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -626,8 +984,12 @@
           <p>#053
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/053.png" alt="PersianImage" />
-        <div class="type">
-          <p>Normal</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Normal"></div>Normal
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -636,8 +998,12 @@
           <p>#054
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/054.png" alt="PsyduckImage" />
-        <div class="type">
-          <p>Water</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Water"></div>Water
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -646,8 +1012,12 @@
           <p>#055
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/055.png" alt="GolduckImage" />
-        <div class="type">
-          <p>Water</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Water"></div>Water
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -656,8 +1026,12 @@
           <p>#056
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/056.png" alt="MankeyImage" />
-        <div class="type">
-          <p>Fighting</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Fighting"></div>Fighting
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -666,8 +1040,12 @@
           <p>#057
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/057.png" alt="PrimeapeImage" />
-        <div class="type">
-          <p>Fighting</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Fighting"></div>Fighting
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -676,8 +1054,12 @@
           <p>#058
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/058.png" alt="GrowlitheImage" />
-        <div class="type">
-          <p>Fire</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Fire"></div>Fire
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -686,8 +1068,12 @@
           <p>#059
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/059.png" alt="ArcanineImage" />
-        <div class="type">
-          <p>Fire</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Fire"></div>Fire
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -696,8 +1082,12 @@
           <p>#060
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/060.png" alt="PoliwagImage" />
-        <div class="type">
-          <p>Water</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Water"></div>Water
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -706,8 +1096,12 @@
           <p>#061
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/061.png" alt="PoliwhirlImage" />
-        <div class="type">
-          <p>Water</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Water"></div>Water
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -716,9 +1110,15 @@
           <p>#062
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/062.png" alt="PoliwrathImage" />
-        <div class="type">
-          <p>Water</p>
-          <p>Fighting</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Water"></div>Water
+            </div>
+            <div class="type">
+              <div class="Fighting"></div>Fighting
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -727,8 +1127,12 @@
           <p>#063
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/063.png" alt="AbraImage" />
-        <div class="type">
-          <p>Psychic</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Psychic"></div>Psychic
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -737,8 +1141,12 @@
           <p>#064
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/064.png" alt="KadabraImage" />
-        <div class="type">
-          <p>Psychic</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Psychic"></div>Psychic
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -747,8 +1155,12 @@
           <p>#065
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/065.png" alt="AlakazamImage" />
-        <div class="type">
-          <p>Psychic</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Psychic"></div>Psychic
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -757,8 +1169,12 @@
           <p>#066
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/066.png" alt="MachopImage" />
-        <div class="type">
-          <p>Fighting</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Fighting"></div>Fighting
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -767,8 +1183,12 @@
           <p>#067
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/067.png" alt="MachokeImage" />
-        <div class="type">
-          <p>Fighting</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Fighting"></div>Fighting
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -777,8 +1197,12 @@
           <p>#068
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/068.png" alt="MachampImage" />
-        <div class="type">
-          <p>Fighting</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Fighting"></div>Fighting
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -787,9 +1211,15 @@
           <p>#069
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/069.png" alt="BellsproutImage" />
-        <div class="type">
-          <p>Grass</p>
-          <p>Poison</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Grass"></div>Grass
+            </div>
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -798,9 +1228,15 @@
           <p>#070
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/070.png" alt="WeepinbellImage" />
-        <div class="type">
-          <p>Grass</p>
-          <p>Poison</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Grass"></div>Grass
+            </div>
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -809,9 +1245,15 @@
           <p>#071
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/071.png" alt="VictreebelImage" />
-        <div class="type">
-          <p>Grass</p>
-          <p>Poison</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Grass"></div>Grass
+            </div>
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -820,9 +1262,15 @@
           <p>#072
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/072.png" alt="TentacoolImage" />
-        <div class="type">
-          <p>Water</p>
-          <p>Poison</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Water"></div>Water
+            </div>
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -831,9 +1279,15 @@
           <p>#073
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/073.png" alt="TentacruelImage" />
-        <div class="type">
-          <p>Water</p>
-          <p>Poison</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Water"></div>Water
+            </div>
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -842,9 +1296,15 @@
           <p>#074
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/074.png" alt="GeodudeImage" />
-        <div class="type">
-          <p>Rock</p>
-          <p>Ground</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Rock"></div>Rock
+            </div>
+            <div class="type">
+              <div class="Ground"></div>Ground
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -853,9 +1313,15 @@
           <p>#075
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/075.png" alt="GravelerImage" />
-        <div class="type">
-          <p>Rock</p>
-          <p>Ground</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Rock"></div>Rock
+            </div>
+            <div class="type">
+              <div class="Ground"></div>Ground
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -864,9 +1330,15 @@
           <p>#076
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/076.png" alt="GolemImage" />
-        <div class="type">
-          <p>Rock</p>
-          <p>Ground</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Rock"></div>Rock
+            </div>
+            <div class="type">
+              <div class="Ground"></div>Ground
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -875,8 +1347,12 @@
           <p>#077
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/077.png" alt="PonytaImage" />
-        <div class="type">
-          <p>Fire</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Fire"></div>Fire
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -885,8 +1361,12 @@
           <p>#078
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/078.png" alt="RapidashImage" />
-        <div class="type">
-          <p>Fire</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Fire"></div>Fire
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -895,9 +1375,15 @@
           <p>#079
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/079.png" alt="SlowpokeImage" />
-        <div class="type">
-          <p>Water</p>
-          <p>Psychic</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Water"></div>Water
+            </div>
+            <div class="type">
+              <div class="Psychic"></div>Psychic
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -906,9 +1392,15 @@
           <p>#080
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/080.png" alt="SlowbroImage" />
-        <div class="type">
-          <p>Water</p>
-          <p>Psychic</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Water"></div>Water
+            </div>
+            <div class="type">
+              <div class="Psychic"></div>Psychic
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -917,8 +1409,12 @@
           <p>#081
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/081.png" alt="MagnemiteImage" />
-        <div class="type">
-          <p>Electric</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Electric"></div>Electric
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -927,8 +1423,12 @@
           <p>#082
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/082.png" alt="MagnetonImage" />
-        <div class="type">
-          <p>Electric</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Electric"></div>Electric
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -937,9 +1437,15 @@
           <p>#083
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/083.png" alt="Farfetch'dImage" />
-        <div class="type">
-          <p>Normal</p>
-          <p>Flying</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Normal"></div>Normal
+            </div>
+            <div class="type">
+              <div class="Flying"></div>Flying
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -948,9 +1454,15 @@
           <p>#084
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/084.png" alt="DoduoImage" />
-        <div class="type">
-          <p>Normal</p>
-          <p>Flying</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Normal"></div>Normal
+            </div>
+            <div class="type">
+              <div class="Flying"></div>Flying
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -959,9 +1471,15 @@
           <p>#085
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/085.png" alt="DodrioImage" />
-        <div class="type">
-          <p>Normal</p>
-          <p>Flying</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Normal"></div>Normal
+            </div>
+            <div class="type">
+              <div class="Flying"></div>Flying
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -970,8 +1488,12 @@
           <p>#086
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/086.png" alt="SeelImage" />
-        <div class="type">
-          <p>Water</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Water"></div>Water
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -980,9 +1502,15 @@
           <p>#087
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/087.png" alt="DewgongImage" />
-        <div class="type">
-          <p>Water</p>
-          <p>Ice</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Water"></div>Water
+            </div>
+            <div class="type">
+              <div class="Ice"></div>Ice
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -991,8 +1519,12 @@
           <p>#088
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/088.png" alt="GrimerImage" />
-        <div class="type">
-          <p>Poison</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1001,8 +1533,12 @@
           <p>#089
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/089.png" alt="MukImage" />
-        <div class="type">
-          <p>Poison</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1011,8 +1547,12 @@
           <p>#090
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/090.png" alt="ShellderImage" />
-        <div class="type">
-          <p>Water</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Water"></div>Water
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1021,9 +1561,15 @@
           <p>#091
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/091.png" alt="CloysterImage" />
-        <div class="type">
-          <p>Water</p>
-          <p>Ice</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Water"></div>Water
+            </div>
+            <div class="type">
+              <div class="Ice"></div>Ice
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1032,9 +1578,15 @@
           <p>#092
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/092.png" alt="GastlyImage" />
-        <div class="type">
-          <p>Ghost</p>
-          <p>Poison</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Ghost"></div>Ghost
+            </div>
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1043,9 +1595,15 @@
           <p>#093
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/093.png" alt="HaunterImage" />
-        <div class="type">
-          <p>Ghost</p>
-          <p>Poison</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Ghost"></div>Ghost
+            </div>
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1054,9 +1612,15 @@
           <p>#094
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/094.png" alt="GengarImage" />
-        <div class="type">
-          <p>Ghost</p>
-          <p>Poison</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Ghost"></div>Ghost
+            </div>
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1065,9 +1629,15 @@
           <p>#095
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/095.png" alt="OnixImage" />
-        <div class="type">
-          <p>Rock</p>
-          <p>Ground</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Rock"></div>Rock
+            </div>
+            <div class="type">
+              <div class="Ground"></div>Ground
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1076,8 +1646,12 @@
           <p>#096
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/096.png" alt="DrowzeeImage" />
-        <div class="type">
-          <p>Psychic</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Psychic"></div>Psychic
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1086,8 +1660,12 @@
           <p>#097
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/097.png" alt="HypnoImage" />
-        <div class="type">
-          <p>Psychic</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Psychic"></div>Psychic
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1096,8 +1674,12 @@
           <p>#098
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/098.png" alt="KrabbyImage" />
-        <div class="type">
-          <p>Water</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Water"></div>Water
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1106,8 +1688,12 @@
           <p>#099
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/099.png" alt="KinglerImage" />
-        <div class="type">
-          <p>Water</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Water"></div>Water
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1116,8 +1702,12 @@
           <p>#100
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/100.png" alt="VoltorbImage" />
-        <div class="type">
-          <p>Electric</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Electric"></div>Electric
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1126,8 +1716,12 @@
           <p>#101
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/101.png" alt="ElectrodeImage" />
-        <div class="type">
-          <p>Electric</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Electric"></div>Electric
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1136,9 +1730,15 @@
           <p>#102
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/102.png" alt="ExeggcuteImage" />
-        <div class="type">
-          <p>Grass</p>
-          <p>Psychic</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Grass"></div>Grass
+            </div>
+            <div class="type">
+              <div class="Psychic"></div>Psychic
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1147,9 +1747,15 @@
           <p>#103
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/103.png" alt="ExeggutorImage" />
-        <div class="type">
-          <p>Grass</p>
-          <p>Psychic</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Grass"></div>Grass
+            </div>
+            <div class="type">
+              <div class="Psychic"></div>Psychic
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1158,8 +1764,12 @@
           <p>#104
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/104.png" alt="CuboneImage" />
-        <div class="type">
-          <p>Ground</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Ground"></div>Ground
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1168,8 +1778,12 @@
           <p>#105
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/105.png" alt="MarowakImage" />
-        <div class="type">
-          <p>Ground</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Ground"></div>Ground
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1178,8 +1792,12 @@
           <p>#106
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/106.png" alt="HitmonleeImage" />
-        <div class="type">
-          <p>Fighting</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Fighting"></div>Fighting
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1188,8 +1806,12 @@
           <p>#107
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/107.png" alt="HitmonchanImage" />
-        <div class="type">
-          <p>Fighting</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Fighting"></div>Fighting
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1198,8 +1820,12 @@
           <p>#108
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/108.png" alt="LickitungImage" />
-        <div class="type">
-          <p>Normal</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Normal"></div>Normal
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1208,8 +1834,12 @@
           <p>#109
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/109.png" alt="KoffingImage" />
-        <div class="type">
-          <p>Poison</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1218,8 +1848,12 @@
           <p>#110
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/110.png" alt="WeezingImage" />
-        <div class="type">
-          <p>Poison</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Poison"></div>Poison
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1228,9 +1862,15 @@
           <p>#111
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/111.png" alt="RhyhornImage" />
-        <div class="type">
-          <p>Ground</p>
-          <p>Rock</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Ground"></div>Ground
+            </div>
+            <div class="type">
+              <div class="Rock"></div>Rock
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1239,9 +1879,15 @@
           <p>#112
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/112.png" alt="RhydonImage" />
-        <div class="type">
-          <p>Ground</p>
-          <p>Rock</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Ground"></div>Ground
+            </div>
+            <div class="type">
+              <div class="Rock"></div>Rock
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1250,8 +1896,12 @@
           <p>#113
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/113.png" alt="ChanseyImage" />
-        <div class="type">
-          <p>Normal</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Normal"></div>Normal
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1260,8 +1910,12 @@
           <p>#114
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/114.png" alt="TangelaImage" />
-        <div class="type">
-          <p>Grass</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Grass"></div>Grass
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1270,8 +1924,12 @@
           <p>#115
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/115.png" alt="KangaskhanImage" />
-        <div class="type">
-          <p>Normal</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Normal"></div>Normal
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1280,8 +1938,12 @@
           <p>#116
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/116.png" alt="HorseaImage" />
-        <div class="type">
-          <p>Water</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Water"></div>Water
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1290,8 +1952,12 @@
           <p>#117
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/117.png" alt="SeadraImage" />
-        <div class="type">
-          <p>Water</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Water"></div>Water
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1300,8 +1966,12 @@
           <p>#118
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/118.png" alt="GoldeenImage" />
-        <div class="type">
-          <p>Water</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Water"></div>Water
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1310,8 +1980,12 @@
           <p>#119
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/119.png" alt="SeakingImage" />
-        <div class="type">
-          <p>Water</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Water"></div>Water
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1320,8 +1994,12 @@
           <p>#120
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/120.png" alt="StaryuImage" />
-        <div class="type">
-          <p>Water</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Water"></div>Water
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1330,9 +2008,15 @@
           <p>#121
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/121.png" alt="StarmieImage" />
-        <div class="type">
-          <p>Water</p>
-          <p>Psychic</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Water"></div>Water
+            </div>
+            <div class="type">
+              <div class="Psychic"></div>Psychic
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1341,8 +2025,12 @@
           <p>#122
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/122.png" alt="Mr. MimeImage" />
-        <div class="type">
-          <p>Psychic</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Psychic"></div>Psychic
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1351,9 +2039,15 @@
           <p>#123
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/123.png" alt="ScytherImage" />
-        <div class="type">
-          <p>Bug</p>
-          <p>Flying</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Bug"></div>Bug
+            </div>
+            <div class="type">
+              <div class="Flying"></div>Flying
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1362,9 +2056,15 @@
           <p>#124
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/124.png" alt="JynxImage" />
-        <div class="type">
-          <p>Ice</p>
-          <p>Psychic</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Ice"></div>Ice
+            </div>
+            <div class="type">
+              <div class="Psychic"></div>Psychic
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1373,8 +2073,12 @@
           <p>#125
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/125.png" alt="ElectabuzzImage" />
-        <div class="type">
-          <p>Electric</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Electric"></div>Electric
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1383,8 +2087,12 @@
           <p>#126
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/126.png" alt="MagmarImage" />
-        <div class="type">
-          <p>Fire</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Fire"></div>Fire
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1393,8 +2101,12 @@
           <p>#127
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/127.png" alt="PinsirImage" />
-        <div class="type">
-          <p>Bug</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Bug"></div>Bug
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1403,8 +2115,12 @@
           <p>#128
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/128.png" alt="TaurosImage" />
-        <div class="type">
-          <p>Normal</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Normal"></div>Normal
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1413,8 +2129,12 @@
           <p>#129
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/129.png" alt="MagikarpImage" />
-        <div class="type">
-          <p>Water</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Water"></div>Water
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1423,9 +2143,15 @@
           <p>#130
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/130.png" alt="GyaradosImage" />
-        <div class="type">
-          <p>Water</p>
-          <p>Flying</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Water"></div>Water
+            </div>
+            <div class="type">
+              <div class="Flying"></div>Flying
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1434,9 +2160,15 @@
           <p>#131
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/131.png" alt="LaprasImage" />
-        <div class="type">
-          <p>Water</p>
-          <p>Ice</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Water"></div>Water
+            </div>
+            <div class="type">
+              <div class="Ice"></div>Ice
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1445,8 +2177,12 @@
           <p>#132
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/132.png" alt="DittoImage" />
-        <div class="type">
-          <p>Normal</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Normal"></div>Normal
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1455,8 +2191,12 @@
           <p>#133
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/133.png" alt="EeveeImage" />
-        <div class="type">
-          <p>Normal</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Normal"></div>Normal
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1465,8 +2205,12 @@
           <p>#134
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/134.png" alt="VaporeonImage" />
-        <div class="type">
-          <p>Water</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Water"></div>Water
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1475,8 +2219,12 @@
           <p>#135
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/135.png" alt="JolteonImage" />
-        <div class="type">
-          <p>Electric</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Electric"></div>Electric
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1485,8 +2233,12 @@
           <p>#136
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/136.png" alt="FlareonImage" />
-        <div class="type">
-          <p>Fire</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Fire"></div>Fire
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1495,8 +2247,12 @@
           <p>#137
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/137.png" alt="PorygonImage" />
-        <div class="type">
-          <p>Normal</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Normal"></div>Normal
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1505,9 +2261,15 @@
           <p>#138
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/138.png" alt="OmanyteImage" />
-        <div class="type">
-          <p>Rock</p>
-          <p>Water</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Rock"></div>Rock
+            </div>
+            <div class="type">
+              <div class="Water"></div>Water
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1516,9 +2278,15 @@
           <p>#139
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/139.png" alt="OmastarImage" />
-        <div class="type">
-          <p>Rock</p>
-          <p>Water</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Rock"></div>Rock
+            </div>
+            <div class="type">
+              <div class="Water"></div>Water
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1527,9 +2295,15 @@
           <p>#140
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/140.png" alt="KabutoImage" />
-        <div class="type">
-          <p>Rock</p>
-          <p>Water</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Rock"></div>Rock
+            </div>
+            <div class="type">
+              <div class="Water"></div>Water
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1538,9 +2312,15 @@
           <p>#141
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/141.png" alt="KabutopsImage" />
-        <div class="type">
-          <p>Rock</p>
-          <p>Water</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Rock"></div>Rock
+            </div>
+            <div class="type">
+              <div class="Water"></div>Water
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1549,9 +2329,15 @@
           <p>#142
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/142.png" alt="AerodactylImage" />
-        <div class="type">
-          <p>Rock</p>
-          <p>Flying</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Rock"></div>Rock
+            </div>
+            <div class="type">
+              <div class="Flying"></div>Flying
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1560,8 +2346,12 @@
           <p>#143
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/143.png" alt="SnorlaxImage" />
-        <div class="type">
-          <p>Normal</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Normal"></div>Normal
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1570,9 +2360,15 @@
           <p>#144
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/144.png" alt="ArticunoImage" />
-        <div class="type">
-          <p>Ice</p>
-          <p>Flying</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Ice"></div>Ice
+            </div>
+            <div class="type">
+              <div class="Flying"></div>Flying
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1581,9 +2377,15 @@
           <p>#145
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/145.png" alt="ZapdosImage" />
-        <div class="type">
-          <p>Electric</p>
-          <p>Flying</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Electric"></div>Electric
+            </div>
+            <div class="type">
+              <div class="Flying"></div>Flying
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1592,9 +2394,15 @@
           <p>#146
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/146.png" alt="MoltresImage" />
-        <div class="type">
-          <p>Fire</p>
-          <p>Flying</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Fire"></div>Fire
+            </div>
+            <div class="type">
+              <div class="Flying"></div>Flying
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1603,8 +2411,12 @@
           <p>#147
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/147.png" alt="DratiniImage" />
-        <div class="type">
-          <p>Dragon</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Dragon"></div>Dragon
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1613,8 +2425,12 @@
           <p>#148
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/148.png" alt="DragonairImage" />
-        <div class="type">
-          <p>Dragon</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Dragon"></div>Dragon
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1623,9 +2439,15 @@
           <p>#149
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/149.png" alt="DragoniteImage" />
-        <div class="type">
-          <p>Dragon</p>
-          <p>Flying</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Dragon"></div>Dragon
+            </div>
+            <div class="type">
+              <div class="Flying"></div>Flying
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1634,8 +2456,12 @@
           <p>#150
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/150.png" alt="MewtwoImage" />
-        <div class="type">
-          <p>Psychic</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Psychic"></div>Psychic
+            </div>
+          </div>
         </div>
       </div>
       <div class="pokemon">
@@ -1644,8 +2470,12 @@
           <p>#151
         </div>
         <img src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/151.png" alt="MewImage" />
-        <div class="type">
-          <p>Psychic</p>
+        <div class="pokemonInfo">
+          <div class="types">
+            <div class="type">
+              <div class="Psychic"></div>Psychic
+            </div>
+          </div>
         </div>
       </div>
     </div>
