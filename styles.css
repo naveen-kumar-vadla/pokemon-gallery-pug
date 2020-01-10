@@ -48,7 +48,7 @@ input[type='text'] {
   border-radius: 6px;
   padding: 15px 20px 20px 20px;
   margin: 20px;
-  background: radial-gradient(#00d9ff26, #8f97ffca);
+  background: radial-gradient(#00d9ff26, #aeb4ffca);
   box-shadow: 5px 5px 10px 0px #ccc;
   transform: scale(0.95);
   transition: transform 1s;
