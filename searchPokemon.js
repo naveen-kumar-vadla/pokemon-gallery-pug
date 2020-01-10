@@ -1,5 +1,5 @@
 const filterPokemons = (pokemon, text) => {
-  const pokemonName = pokemon.children[0].innerText.toLowerCase();
+  const pokemonName = pokemon.innerText.toLowerCase();
   return pokemonName.includes(text);
 };
 const searchPokemon = () => {
