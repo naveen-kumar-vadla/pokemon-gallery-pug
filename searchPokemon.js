@@ -1,6 +1,6 @@
 const filterPokemon = (pokemon, text) => {
-  const pokemonName = pokemon.innerText.toLowerCase();
-  return pokemonName.includes(text);
+  const pokemonInfo = pokemon.innerText.toLowerCase();
+  return pokemonInfo.includes(text);
 };
 const displayPokemon = text => {
   const allPokemon = Array.from(document.getElementsByClassName('pokemon'));
