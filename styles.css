@@ -103,7 +103,7 @@ input[type='text'] {
 }
 
 .pokemonBack {
-  background: #767fffe3;
+  background: #767fff9d;
   width: 30px;
   height: 30px;
   position: absolute;
@@ -129,7 +129,7 @@ th {
   right: 0px;
   top: 0px;
   opacity: 1;
-  color: #b4bccc;
+  color: #ffffffb9;
 }
 
 .pokemonBack > .table {
