@@ -61,7 +61,7 @@ input[type='text'] {
 .pokeCard-heading {
   border-bottom: 1px solid rgba(80, 80, 80, 0.3);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .pokemonName {
@@ -70,6 +70,8 @@ input[type='text'] {
   padding: 0px 0px 10px 10px;
   margin: 0px;
   font-size: 16px;
+  padding-left: 25px;
+  padding-right: 20px;
 }
 
 .pokemon img {
@@ -93,7 +95,6 @@ input[type='text'] {
   display: flex;
   margin: 0px;
   font-size: 12px;
-  color: rgba(20, 20, 20, 0.8);
   padding: 5px;
   border: 1px solid rgba(80, 80, 80, 0.3);
   border-radius: 5px;
@@ -101,31 +102,75 @@ input[type='text'] {
   margin-left: 5px;
 }
 
+.pokemonBack {
+  background: rgb(202, 202, 202);
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  border-radius: 0px 0px 200px 200px;
+  transition: all 1s, border-radius 2s, top 1s;
+  overflow: hidden;
+}
+
+.pokemonBack > .icon {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  opacity: 1;
+  color: whitesmoke;
+  background: none;
+}
+
+.pokemonBack:hover {
+  width: 100%;
+  right: 0;
+  top: 0;
+  border-radius: 0;
+  height: 100%;
+}
+
+.pokemonBack:hover .icon {
+  opacity: 0;
+}
+
+.pokemonBack:hover .table {
+  opacity: 1;
+  transform: scale(1);
+  transform: translateY(0);
+}
+
+.pokemonBack > .table {
+  opacity: 0;
+  transform: scale(0.5);
+  transform: translateY(-200%);
+  transition: opacity 0.2s, transform 0.8s;
+}
+
+.pokemonBack img {
+  height: 80px;
+  padding-left: 70px;
+  margin: 0px;
+}
+
+.backName {
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+
 .Grass,
-.Poison,
-.Bug,
-.Flying,
-.Dragon,
-.Electric,
-.Fighting,
-.Fire,
-.Ghost,
-.Poison,
-.Psychic,
-.Ground,
-.Rock,
-.Ice,
-.Flying,
-.Normal,
-.Water,
-.Steel,
-.Dark,
-.Fairy {
+.Poison {
   width: 12px;
   height: 12px;
   margin-top: 1px;
   border-radius: 50%;
   margin-right: 5px;
+}
+
+.table td,
+th {
+  text-align: left;
 }
 
 .Grass {
@@ -134,67 +179,4 @@ input[type='text'] {
 
 .Poison {
   background: linear-gradient(#a370b1, #c800ff);
-}
-
-.Bug {
-  background: linear-gradient(brown, black);
-}
-
-.Flying {
-  background: linear-gradient(#fbff00, #eee1e1);
-}
-
-.Dragon {
-  background: linear-gradient(#fdff75, #fccc7c);
-}
-
-.Electric {
-  background: linear-gradient(#fbff00, #ffc400);
-}
-
-.Fighting {
-  background: linear-gradient(#929252, #cccc5c);
-}
-
-.Fire {
-  background: linear-gradient(#ff6600, #fbff00);
-}
-
-.Ghost {
-  background: linear-gradient(#444141, #4e4242);
-}
-
-.Psychic {
-  background: linear-gradient(#4e4b4b, #8b8989);
-}
-
-.Ground {
-  background: linear-gradient(#584632, #5c4937);
-}
-
-.Rock {
-  background: linear-gradient(#5d5c5c, #8f8f8f);
-}
-
-.Ice {
-  background: linear-gradient(#00ffff, #ffffff);
-}
-
-.Water {
-  background: linear-gradient(#008cff, #00ffff);
-}
-
-.Normal {
-  background: linear-gradient(#ff6600, #dad1d1);
-}
-
-.Steel {
-  background: linear-gradient(#ffffff, #3d3d3d);
-}
-
-.Dark {
-  background: linear-gradient(#161616, #7c6d6d);
-}
-.Fairy {
-  background: linear-gradient(#ffee00, #ffffff91);
 }
