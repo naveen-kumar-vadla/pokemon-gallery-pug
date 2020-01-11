@@ -172,23 +172,82 @@ input[type='text'] {
 }
 
 .Grass,
-.Poison {
+.Poison,
+.Bug,
+.Flying,
+.Dragon,
+.Electric,
+.Fighting,
+.Fire,
+.Ghost,
+.Poison,
+.Psychic,
+.Ground,
+.Rock,
+.Ice,
+.Flying,
+.Normal,
+.Water,
+.Steel,
+.Dark,
+.Fairy {
   width: 12px;
   height: 12px;
   margin-top: 1px;
   border-radius: 50%;
   margin-right: 5px;
 }
-
-.table td,
-th {
-  text-align: left;
-}
-
 .Grass {
   background: linear-gradient(#83ad44, #48ff00);
 }
-
 .Poison {
   background: linear-gradient(#a370b1, #c800ff);
+}
+.Bug {
+  background: linear-gradient(brown, black);
+}
+.Flying {
+  background: linear-gradient(#fbff00, #eee1e1);
+}
+.Dragon {
+  background: linear-gradient(#fdff75, #fccc7c);
+}
+.Electric {
+  background: linear-gradient(#fbff00, #ffc400);
+}
+.Fighting {
+  background: linear-gradient(#929252, #cccc5c);
+}
+.Fire {
+  background: linear-gradient(#ff6600, #fbff00);
+}
+.Ghost {
+  background: linear-gradient(#444141, #4e4242);
+}
+.Psychic {
+  background: linear-gradient(#4e4b4b, #8b8989);
+}
+.Ground {
+  background: linear-gradient(#584632, #5c4937);
+}
+.Rock {
+  background: linear-gradient(#5d5c5c, #8f8f8f);
+}
+.Ice {
+  background: linear-gradient(#00ffff, #ffffff);
+}
+.Water {
+  background: linear-gradient(#008cff, #00ffff);
+}
+.Normal {
+  background: linear-gradient(#ff6600, #dad1d1);
+}
+.Steel {
+  background: linear-gradient(#ffffff, #3d3d3d);
+}
+.Dark {
+  background: linear-gradient(#161616, #7c6d6d);
+}
+.Fairy {
+  background: linear-gradient(#ffee00, #ffffff91);
 }
