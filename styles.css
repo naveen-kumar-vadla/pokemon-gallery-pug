@@ -170,6 +170,10 @@ input[type='text'] {
 .pokemonBack:hover .backName {
   opacity: 1;
 }
+.table td,
+th {
+  text-align: left;
+}
 
 .Grass,
 .Poison,
