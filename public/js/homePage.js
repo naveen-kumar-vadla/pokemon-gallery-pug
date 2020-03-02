@@ -115,6 +115,6 @@ const displayPokemonCards = resText => {
   pokemonContainer.innerHTML = getHtml(pokemonData);
 };
 
-const main = () => sendXHR('GET', './data/pokemonData.json', '', displayPokemonCards);
+const main = () => sendXHR('GET', './resources/pokemonData.json', '', displayPokemonCards);
 
 window.onload = main();
