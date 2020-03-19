@@ -33,88 +33,48 @@ const getTableCode = poke => {
   <tr><th>SPECIAL DEFENCE</th><td>${poke['Sp. Defense']}</td></tr>`;
 };
 
-const generatePokemonHtmlCode = (htmlCode, pokemon) => {
-  const types = pokemon.type.reduce(getTypeCode, '');
-  htmlCode +=
-    html[0] +
-    pokemon.name +
-    html[1] +
-    pokemon.name +
-    html[2] +
-    getId(pokemon.id) +
-    html[3] +
-    `./images/${getId(pokemon.id)}.png` +
-    html[4] +
-    pokemon.name +
-    html[5] +
-    types +
-    html[6] +
-    pokemon.name +
-    html[7] +
-    getTableCode(pokemon.base) +
-    html[8];
-
-  return htmlCode;
+const fillTemplate = (template, propertyBag) => {
+  const replaceKeyWithValue = (template, key) => {
+    const pattern = new RegExp(`__${key}__`, 'g');
+    return template.replace(pattern, propertyBag[key]);
+  };
+  const keys = Object.keys(propertyBag);
+  const html = keys.reduce(replaceKeyWithValue, template);
+  return html;
 };
 
+const pokemonCardTemplate = `
+<div class="pokemon" id="__name__">
+  <div class="pokeCard-heading">
+    <h3 class="pokemonName">__name__</h3>
+    <h3 class="pokemonName">#__id__</h3>
+  </div>
+  <img src="./images/__id__.png" " alt=" __name__ Image" class="pokemon-image"/>
+  <div class="pokemonInfo">
+    <div class="types">__type__</div>
+    <div class="pokemonBack">
+      <div class="icon"><img src="./images/info_outline.svg" class="info-icon"/></div>
+      <h3 class="backName">__name__</h3>
+      <table class=".table" align="center">__base__</table>
+    </div>
+  </div>
+</div>`;
 
-const html = [
-  '<div class="pokemon" id="',
-  //Bulbasaur
-  '"><div class="pokeCard-heading"><h3 class="pokemonName">',
-  //Bulbasaur
-  '</h3><h3 class="pokemonName">#',
-  //001
-  '</h3></div><img src="',
-  ///Users/vadlanaveenkumar/naveen/projects/html/pokemon/images/001.png"
-  '" alt="',
-  //Bulbasaur
-  'Image"/><div class="pokemonInfo"><div class="types">',
-  //   <div class="type">
-  //     <div class="Grass"></div>Grass
-  //   </div>
-  //   <div class="type">
-  //     <div class="Poison"></div>Poison
-  //   </div>
-  // </div>
-  '</div><div class="pokemonBack"><div class="icon"><i class="material-icons">info_outline</i></div><h3 class="backName">',
-  //Bulbasaur
-  '</h3><table class=".table" align="center">',
-  // <tr>
-  //   <th>HP</th>
-  //         <td>45</td>
-  //       </tr>
-  //       <tr>
-  //         <th>ATTACK</th>
-  //         <td>49</td>
-  //       </tr>
-  //       <tr>
-  //         <th>DEFENCE</th>
-  //         <td>49</td>
-  //       </tr>
-  //       <tr>
-  //         <th>SPEED</th>
-  //         <td>45</td>
-  //       </tr>
-  //       <tr>
-  //         <th>SPECIAL ATTACK</th>
-  //         <td>65</td>
-  //       </tr>
-  //       <tr>
-  //         <th>SPECIAL DEFENCE</th>
-  //         <td>65</td>
-  //       </tr>
-  '</table></div></div></div>'
-];
+const generatePokemonHtmlCode = (htmlCode, pokemon) => {
+  pokemon.id = getId(pokemon.id);
+  pokemon.type = pokemon.type.reduce(getTypeCode, '');
+  pokemon.base = getTableCode(pokemon.base);
+  return htmlCode + fillTemplate(pokemonCardTemplate, pokemon);
+};
 
-const getHtml = pokemonData => pokemonData.reduce(generatePokemonHtmlCode, '');
- 
 const displayPokemonCards = resText => {
   const pokemonData = JSON.parse(resText);
   const pokemonContainer = document.querySelector('.pokemonContainer');
-  pokemonContainer.innerHTML = getHtml(pokemonData);
+  pokemonContainer.innerHTML = pokemonData.reduce(generatePokemonHtmlCode, '');
 };
 
-const main = () => sendXHR('GET', './resources/pokemonData.json', '', displayPokemonCards);
+const main = () => {
+  sendXHR('GET', './resources/pokemonData.json', '', displayPokemonCards);
+};
 
 window.onload = main();
