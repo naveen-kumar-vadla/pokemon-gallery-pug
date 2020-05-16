@@ -45,19 +45,13 @@ const fillTemplate = (template, propertyBag) => {
 
 const pokemonCardTemplate = `
 <div class="pokemon" id="__name__">
-  <div class="pokeCard-heading">
-    <h3 class="pokemonName">__name__</h3>
-    <h3 class="pokemonName">#__id__</h3>
-  </div>
-  <img src="./images/__id__.png" " alt=" __name__ Image" class="pokemon-image"/>
-  <div class="pokemonInfo">
+<div class="pokeCard-heading">
+<h3 class="backName">__name__</h3>
+<h3 class="backName">#__id__</h3>
+</div>
+<img src="./images/__id__.png" " alt=" __name__ Image" class="pokemon-image"/>
+    <table class=".table" align="center">__base__</table>
     <div class="types">__type__</div>
-    <div class="pokemonBack">
-      <div class="icon"><img src="./images/info_outline.svg" class="info-icon"/></div>
-      <h3 class="backName">__name__</h3>
-      <table class=".table" align="center">__base__</table>
-    </div>
-  </div>
 </div>`;
 
 const generatePokemonHtmlCode = (htmlCode, pokemon) => {

@@ -6,16 +6,16 @@ body {
 .main-heading {
   text-align: center;
   color: rgba(0, 0, 0, 0.7);
-  font-size: 60px;
+  font-size: 3rem;
   font-weight: 400;
-  margin-bottom: 9px;
-  padding-top: 10px;
+  margin: 0%;
+  padding: 0%;
 }
 
 .searchBar {
   display: flex;
   justify-content: center;
-  padding-top: 15px;
+  padding: 1vh;
 }
 
 input:focus {
@@ -23,32 +23,31 @@ input:focus {
 }
 
 input[type='text'] {
-  height: 35px;
-  width: 400px;
+  height: 3.5vh;
+  width: 40vh;
   border: none;
   background-color: transparent;
-  border-bottom: 1px solid rgba(80, 80, 80, 0.5);
-  border-radius: 3px;
-  padding-left: 10px;
+  border-bottom: 0.1vh solid rgba(80, 80, 80, 0.5);
+  border-radius: 0.3vh;
+  padding-left: 1vh;
 }
 
 .pokemonContainer {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 20px;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 2vw;
 }
 
 .pokemon {
   display: flex;
-  flex-direction: column;
-  width: 180px;
-  padding: 15px 20px 20px 20px;
-  margin: 20px;
-  background: radial-gradient(#00d9ff26, #8f97ffca);
-  box-shadow: 5px 5px 10px 0px #ccc;
+  flex-flow: column nowrap;
+  padding: 1.5vh;
+  margin: 1vh;
+  background-color: #00d9ff26;
+  box-shadow: 0.5vh 0.5vh 1vh 0vh #ccc;
   transform: scale(0.95);
+  border: 0.1vh solid black;
   transition: transform 1s;
 }
 
@@ -58,105 +57,41 @@ input[type='text'] {
 }
 
 .pokeCard-heading {
-  border-bottom: 1px solid rgba(80, 80, 80, 0.3);
   display: flex;
-  justify-content: center;
-}
-
-.pokemonName {
-  color: rgba(30, 30, 30, 0.8);
-  font-weight: 500;
-  padding: 0px 0px 10px 10px;
-  margin: 0px;
-  font-size: 16px;
-  padding-left: 25px;
-  padding-right: 20px;
+  justify-content: space-around;
+  border-bottom: 0.1vh solid black;
 }
 
 .pokemon-image {
-  height: 150px;
-  margin: 20px;
-}
-
-.pokemonInfo {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  padding-top: 10px;
+  height: 20vh;
+  margin: 2vh;
 }
 
 .types {
   display: flex;
   justify-content: center;
+  margin: 2vh 0vh 1vh 0vh;
 }
 
 .type {
   display: flex;
-  margin: 0px;
-  font-size: 12px;
-  padding: 5px;
-  border: 1px solid rgba(80, 80, 80, 0.3);
-  border-radius: 5px;
-  margin-right: 5px;
-  margin-left: 5px;
-}
-
-.pokemonBack {
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  border-radius: 0px 0px 0px 200px;
-  transition: all 1.5s;
-  overflow: hidden;
+  font-size: 1em;
+  padding: 0.5vh;
+  border: 0.1vh solid rgba(80, 80, 80, 0.3);
+  border-radius: 0.5vh;
+  margin: 0vh 0.5vh 0vh 0.5vh;
 }
 
 .backName {
   text-align: center;
-  border-bottom: 1px solid black;
+  font-weight: 500;
 }
 
 .table tr,
 td,
 th {
   text-align: left;
-}
-
-.pokemonBack > .icon {
-  position: absolute;
-  right: 2px;
-  top: 2px;
-  opacity: 1;
-  color: rgba(0, 0, 0, 0.507);
-}
-
-.pokemonBack > .table {
-  opacity: 0;
-}
-
-.pokemonBack > .backName {
-  opacity: 0;
-}
-
-.pokemonBack:hover {
-  width: 100%;
-  height: 100%;
-  border-radius: 0;
-  background: radial-gradient(#ffffff3f, #767fff);
-  transition: all 2s;
-}
-
-.pokemonBack:hover .icon {
-  opacity: 0;
-}
-
-.pokemonBack:hover .table {
-  opacity: 1;
-}
-
-.pokemonBack:hover .backName {
-  opacity: 1;
+  font-weight: 500;
 }
 
 .Grass,
@@ -179,11 +114,11 @@ th {
 .Steel,
 .Dark,
 .Fairy {
-  width: 12px;
-  height: 12px;
-  margin-top: 1px;
-  border-radius: 50%;
-  margin-right: 5px;
+  width: 1.5vh;
+  height: 1.5vh;
+  margin-top: 0.3vh;
+  border-radius: 100vh;
+  margin-right: 0.5vh;
 }
 .Grass {
   background: linear-gradient(#83ad44, #48ff00);
