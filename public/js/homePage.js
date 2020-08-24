@@ -49,7 +49,7 @@ const pokemonCardTemplate = `
 <h3 class="backName">__name__</h3>
 <h3 class="backName">#__id__</h3>
 </div>
-<img src="./images/__id__.png" " alt=" __name__ Image" class="pokemon-image"/>
+<img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/__id__.png" " alt=" __name__ Image" class="pokemon-image"/>
     <table class=".table" align="center">__base__</table>
     <div class="types">__type__</div>
 </div>`;
