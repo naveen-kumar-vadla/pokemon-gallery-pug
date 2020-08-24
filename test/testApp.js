@@ -15,6 +15,17 @@ describe('GET', () => {
         .expect(/\/badFile/, done);
     });
   });
+  describe('/', () => {
+    it('Should give home page with pokemons data', done => {
+      request(app)
+        .get('/')
+        .set('Accept', '*/*')
+        .expect(200)
+        .expect('Content-Type', /html/)
+        .expect('Content-Length', '527473')
+        .expect(/Bulbasaur/, done);
+    });
+  });
 });
 describe('POST', () => {
   describe('FILE NOT FOUND', () => {
