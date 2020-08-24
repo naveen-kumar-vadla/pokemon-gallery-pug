@@ -1,0 +1,32 @@
+mixin pokeCard(pokemon)
+  - let id= pokemon.id.toString().padStart(3,0);
+  - let base= pokemon.base
+  .pokemon(id=`${pokemon.name}`)
+    .pokeCard-heading
+      h3(class="backName")= pokemon.name
+      h3(class="backName")= `#${id}`
+    img(src=`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id}.png` alt=`${pokemon.name} Image` class="pokemon-image")
+    table(class=".table" align="center")
+      tr
+        th HP
+        td= base.HP
+      tr
+        th ATTACK
+        td= base.Attack
+      tr
+        th DEFENCE
+        td= base.Defense
+      tr
+        th SPEED
+        td= base.Speed
+      tr
+        th SPECIAL ATTACK
+        td= base['Sp. Attack']
+      tr
+        th SPECIAL DEFENCE
+        td= base['Sp. Defense']
+    .types
+      each type in pokemon.type
+        .type
+          div(class=`${type}`)
+          div= type

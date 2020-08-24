@@ -1,0 +1,6 @@
+extends layout.pug
+
+include pokeCard.pug
+append pokemonContainer
+  each pokemon in pokemons
+    +pokeCard(pokemon)

@@ -77,8 +77,6 @@ input[type='text'] {
   display: flex;
   font-size: 1em;
   padding: 0.5vh;
-  border: 0.1vh solid rgba(80, 80, 80, 0.3);
-  border-radius: 0.5vh;
   margin: 0vh 0.5vh 0vh 0.5vh;
 }
 
@@ -92,6 +90,10 @@ td,
 th {
   text-align: left;
   font-weight: 500;
+}
+
+td {
+  text-align: right;
 }
 
 .Grass,
