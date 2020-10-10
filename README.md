@@ -1,1 +1,1 @@
-# pokemon# java-naveen-kumar-vadla
+# pokemon-gallery
