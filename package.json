@@ -29,4 +29,7 @@
     "pug": "^3.0.1",
     "supertest": "^4.0.2"
   }
+  "devDependencies": {
+    "minimist": ">=1.2.6"
+  }
 }
